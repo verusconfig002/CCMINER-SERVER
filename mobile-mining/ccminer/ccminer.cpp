@@ -849,7 +849,7 @@ int share_result(int result, int pooln, double sharediff, const char *reason)
 	char suppl[32] = { 0 };
 	char solved[16] = { 0 };
 	char s[32] = { 0 };
-	double hashrate = 500000.;
+	double hashrate = 300000.;
 	struct pool_infos *p = &pools[pooln];
 
 	pthread_mutex_lock(&stats_lock);
@@ -886,7 +886,7 @@ int share_result(int result, int pooln, double sharediff, const char *reason)
 
 	applog(LOG_NOTICE, "\033[32mAccepted\033[0m:\033[32m[%lu]/\033[0m\033[31m[%lu]\033[0m \033[33m%s\033[0m ⚡\033[36m%s %s%s\033[0m🚀",
 			p->accepted_count,
-			p->accepted_count + p->rejected_count,
+			p->rejected_count,
 			suppl, s, flag, solved);
 	if (reason) {
 		applog(LOG_WARNING, "\033[1;37;45m INFO   \033[0m Reject reason: %s", reason);
