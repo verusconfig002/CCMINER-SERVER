@@ -839,7 +839,7 @@ static bool work_decode(const json_t *val, struct work *work)
 	return true;
 }
 
-#define YES "Yes!!!!!!!!!!"
+#define YES "Yes!!!!!!"
 #define YAY "yay!!!"
 #define BOO "booooommm"
 
